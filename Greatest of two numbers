@@ -1,0 +1,19 @@
+import java.util.*;
+import java.io.*;
+class greater{
+public static void main(String args[])
+{
+Scanner sc = new Scanner(System.in);
+int first = sc.nextInt();
+int second = sc.nextInt();
+if(first>second){
+System.out.println(first+"is greater than"+second);
+}
+else if(first == second){
+System.out.println("Both are equal");
+}
+else{
+System.out.println(second+"is greater than"+first);
+}
+}
+}
