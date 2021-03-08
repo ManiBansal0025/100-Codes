@@ -1,0 +1,27 @@
+import java.util.Scanner;
+public class AutomorphicNo {
+public static void main(String args[]) {
+	Scanner sc = new Scanner(System.in);
+	System.out.println("Enter a value");
+	int num = sc.nextInt();
+	String value = Integer.toString(num);
+	int square = 0;
+	String str = "";
+	square = num*num;
+	int mod=0;
+	while(num>0) {
+		mod = square%10;
+		str = Integer.toString(mod)+str;
+		System.out.println(str);
+		num=num/10;
+		square = square/10;
+	}
+	if(str.equals(value)) {
+		System.out.println("No. is Automorphic");
+	}
+	else {
+		System.out.println("No. is not Automorphic");
+	}
+sc.close();
+}
+}
