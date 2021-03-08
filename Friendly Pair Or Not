@@ -1,0 +1,30 @@
+import java.util.Scanner;
+public class FriendlyPair {
+	public static void main(String args[]) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter first no.");
+		int first = sc.nextInt();
+		System.out.println("Enter second no.");
+		int second = sc.nextInt();
+		int sum1=0,sum2=0;
+		int value1 = first;
+		int value2 = second;
+		for(int i=1;i<first;i++) {
+			if(first%i == 0) {
+				sum1 = sum1+i;
+			}
+		}
+		for(int i=1;i<second;i++) {
+			if(second%i == 0) {
+				sum2 = sum2+i;
+			}
+		}
+		if(sum1==value2 && sum2==value1) {
+			System.out.println("Friendly Pair");
+		}
+		else {
+			System.out.println("Not a friendly pair");
+		}
+		sc.close();
+	}
+}
