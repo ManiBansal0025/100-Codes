@@ -1,0 +1,37 @@
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+		System.out.println("Enter your limit");
+		Scanner sc = new Scanner(System.in);
+		int n = sc.nextInt(); int visited = -1;int count=0;
+		int arr[] = new int[n];
+		int distinct[] = new int[n]; 
+		for(int i=0;i<n;i++){
+		    arr[i] = sc.nextInt();
+		}
+		for(int i=0;i<n;i++){
+		    for(int j=i+1;j<n;j++){
+		        if(arr[i] == arr[j]){
+		            distinct[j] = -1;
+		        }
+		        else if(arr[i] != arr[j]){
+		            if(distinct[i] != visited){
+		                distinct[i] = arr[i];
+		            }
+		        }
+		        else if(arr[n-1] != visited){
+		            distinct[n-1] = arr[n-1];
+		        }
+		    }
+		}
+		for(int j=0;j<n;j++){
+		    if(distinct[j] != visited){
+		        count++;
+		        System.out.print(distinct[j]+" ");
+		    }
+		}
+		System.out.println();
+		System.out.println(count);
+	}
+}
