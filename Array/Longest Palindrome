@@ -6,7 +6,6 @@ public class Main
 		System.out.println("Enter the limit");
 		int n = sc.nextInt();int num; int temp;
 		int arr[] = new int[n];
-		int freq[] = new int[n];
 		int mod = 0;
 		String rev = "";
 		for(int i=0;i<n;i++){
