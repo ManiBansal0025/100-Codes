@@ -4,7 +4,7 @@ public class Main
 	public static void main(String[] args) {
 		System.out.println("Enter the limit");
 		Scanner sc = new Scanner(System.in);
-		int n = sc.nextInt();int total=0;
+		int n = sc.nextInt();int total=0;int temp=0;
 		int scalar[] = new int[n];
 		int arr[] = new int[n];
 	    int arr1[] = new int[n];
@@ -14,6 +14,25 @@ public class Main
 	    for(int i=0;i<n;i++){
 	        arr1[i] = sc.nextInt();
 	    }
+	    for(int i=0;i<n;i++){
+	        for(int j=i+1;j<n;j++){
+	            if(arr[i] > arr[j]){
+	                temp = arr[i];
+	                arr[i] = arr[j];
+	                arr[j] = temp;
+	            }
+	        }
+	    }
+	    for(int i=0;i<n;i++){
+	        for(int j=i+1;j<n;j++){
+	            if(arr1[i] < arr1[j]){
+	                temp = arr1[i];
+	                arr1[i] = arr1[j];
+	                arr1[j] = temp;
+	            }
+	        }
+	    }
+	    
 	    for(int i=0;i<n;i++){
 	        scalar[i] = arr[i] * arr1[i];
 	        total = total+scalar[i];
