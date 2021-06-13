@@ -1,27 +1,31 @@
 import java.util.*;
-class Main{
-  public boolean valid(String val){
-    char arr[] = val.toCharArray();
-    for(char ch:val.toCharArray()){
-      if(ch =='('){
-        ch.push(')');
-      }
-      else if(ch == '['){
-        ch.push(']');
-      }
-      else if(ch =='{'){
-        ch.push('}');
-      }
-      else if(val.isEmpty() || val.pop() != ch)
-        return false;
+class Solution {
+    public boolean isValid(String s) {
+        Stack<Character> stack = new Stack<Character>();
+        for (char ch : s.toCharArray()){
+            if(ch == '('){
+                stack.push(')');
+            }
+           else if(ch == '['){
+                stack.push(']');
+            }
+            else if(ch == '{'){
+                stack.push('}');
+            } 
+            else if( stack.isEmpty() || stack.pop()!=ch ){
+                return false;
+            }
+        }
+        return stack.isEmpty();
     }
-    return true;
-    
-  }
-  
   public static void main(String args[]){
-    String val = "()";
-    
-      
+    Scanner sc = new Scanner(System.in);
+    String s = sc.next();
+    if(isValid()){
+      System.out.println("Valid Parentheses");
+    }
+    else{
+      System.out.println("Invalid Parentheses");
+    } 
   }
 }
